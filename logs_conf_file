@@ -1,6 +1,6 @@
 sudo apt update
 
-wget https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa180cVRnUFVjVkhUenhPTDdrXzFhZk40TlZjQXxBQ3Jtc0tra1dNZmhrQUxWWWJ2cms5RnRrSXpBS2dTSS1JQmJqZkdKb203aFVCRzFxeTVuZHZ1eFlMRXhyUFJIRkpPTjJoRDh3TGlzSC1TdnJYdXZuY2dtYmNDMkkyVlEzMzR3emF3R2RRdHFjWm85TGNOcDdBbw&q=https%3A%2F%2Fs3.amazonaws.com%2Faws-cloudwatch%2Fdownloads%2Flatest%2Fawslogs-agent-setup.py&v=uiPfgavVGV0
+wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 
 sudo apt install python2.7 -y
 
