@@ -1,61 +1,30 @@
-# Notes Application
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Notes App</title>
+</head>
+<body>
+    <h1>Notes</h1>
+    <div>
+        <input type="text" id="noteText" placeholder="Add a new note">
+        <button onclick="addNote()">Add</button>
+    </div>
+    <ul id="noteList"></ul>
 
-# Create an empty dictionary to store notes
-notes = {}
-
-def display_menu():
-    print("\nNotes Menu:")
-    print("1. List all notes")
-    print("2. View a note")
-    print("3. Create a new note")
-    print("4. Delete a note")
-    print("5. Exit")
-
-def list_notes():
-    if notes:
-        print("\nList of Notes:")
-        for title in notes.keys():
-            print(f"- {title}")
-    else:
-        print("\nNo notes available.")
-
-def view_note():
-    title = input("\nEnter the title of the note you want to view: ")
-    if title in notes:
-        print(f"\n{title}:")
-        print(notes[title])
-    else:
-        print(f"\nNote with title '{title}' not found.")
-
-def create_note():
-    title = input("\nEnter the title of the note: ")
-    content = input("Enter the content of the note: ")
-    notes[title] = content
-    print("\nNote created successfully!")
-
-def delete_note():
-    title = input("\nEnter the title of the note you want to delete: ")
-    if title in notes:
-        del notes[title]
-        print(f"\nNote '{title}' deleted successfully.")
-    else:
-        print(f"\nNote with title '{title}' not found.")
-
-while True:
-    display_menu()
-    choice = input("Enter your choice (1/2/3/4/5): ")
-
-    if choice == "1":
-        list_notes()
-    elif choice == "2":
-        view_note()
-    elif choice == "3":
-        create_note()
-    elif choice == "4":
-        delete_note()
-    elif choice == "5":
-        print("\nExiting Notes Application. Goodbye!")
-        break
-    else:
-        print("\nInvalid choice. Please choose a valid option.")
+    <script>
+        function addNote() {
+            var noteText = document.getElementById("noteText").value;
+            if (noteText !== "") {
+                var listItem = document.createElement("li");
+                listItem.textContent = noteText;
+                listItem.onclick = function () {
+                    this.remove();
+                };
+                document.getElementById("noteList").appendChild(listItem);
+                document.getElementById("noteText").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
 
