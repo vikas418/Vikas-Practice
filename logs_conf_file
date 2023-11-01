@@ -1,0 +1,11 @@
+sudo apt update
+
+wget https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa180cVRnUFVjVkhUenhPTDdrXzFhZk40TlZjQXxBQ3Jtc0tra1dNZmhrQUxWWWJ2cms5RnRrSXpBS2dTSS1JQmJqZkdKb203aFVCRzFxeTVuZHZ1eFlMRXhyUFJIRkpPTjJoRDh3TGlzSC1TdnJYdXZuY2dtYmNDMkkyVlEzMzR3emF3R2RRdHFjWm85TGNOcDdBbw&q=https%3A%2F%2Fs3.amazonaws.com%2Faws-cloudwatch%2Fdownloads%2Flatest%2Fawslogs-agent-setup.py&v=uiPfgavVGV0
+
+sudo apt install python2.7 -y
+
+sudo python2.7 awslogs-agent-setup.py -r us-east-2
+
+sudo service awslogs start
+
+sudo systemctl enable awslogs
