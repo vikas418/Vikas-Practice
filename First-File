@@ -1,2 +1,61 @@
-Hello My Name is Vikas this is my first GitHub File.
-i am also learning AWS.
+# Notes Application
+
+# Create an empty dictionary to store notes
+notes = {}
+
+def display_menu():
+    print("\nNotes Menu:")
+    print("1. List all notes")
+    print("2. View a note")
+    print("3. Create a new note")
+    print("4. Delete a note")
+    print("5. Exit")
+
+def list_notes():
+    if notes:
+        print("\nList of Notes:")
+        for title in notes.keys():
+            print(f"- {title}")
+    else:
+        print("\nNo notes available.")
+
+def view_note():
+    title = input("\nEnter the title of the note you want to view: ")
+    if title in notes:
+        print(f"\n{title}:")
+        print(notes[title])
+    else:
+        print(f"\nNote with title '{title}' not found.")
+
+def create_note():
+    title = input("\nEnter the title of the note: ")
+    content = input("Enter the content of the note: ")
+    notes[title] = content
+    print("\nNote created successfully!")
+
+def delete_note():
+    title = input("\nEnter the title of the note you want to delete: ")
+    if title in notes:
+        del notes[title]
+        print(f"\nNote '{title}' deleted successfully.")
+    else:
+        print(f"\nNote with title '{title}' not found.")
+
+while True:
+    display_menu()
+    choice = input("Enter your choice (1/2/3/4/5): ")
+
+    if choice == "1":
+        list_notes()
+    elif choice == "2":
+        view_note()
+    elif choice == "3":
+        create_note()
+    elif choice == "4":
+        delete_note()
+    elif choice == "5":
+        print("\nExiting Notes Application. Goodbye!")
+        break
+    else:
+        print("\nInvalid choice. Please choose a valid option.")
+
